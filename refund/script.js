@@ -28,3 +28,35 @@ function formatCurrencyBRL(value) {
 }
 
 
+// Captura o evento de submite do formulário para obter os valores
+form.onsubmite = (event) => {
+  //fazer com que todo submite a página não carregue
+  event.preventDefault()
+
+  // Cria um objeto com detalhes na nova despesas
+  const newExpense = {
+    id: new Date().getTime(),
+    expense: expense.value,
+    category_id: expense.category,
+    category_name: category.options[category.selectedIndex].text,
+    amount: amount.value,
+    created_at: new Date()
+
+  }
+
+  // Chama a função que irá adicionar as novas despesas na lista
+  expenseAdd(newExpense)
+}
+
+function expenseAdd(newExpense) {
+  try {
+    // Cria o elemento para adicionar na lista.
+    
+  } catch (error) {
+    alert("Não foi possível atualizar a lista de despesas.")
+    console.log(error)
+  }
+
+
+
+}
